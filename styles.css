@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f0fdf4;
+  color: #1f2937;
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+
+.leftside {
+  background: #0b0b64f1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  color: white;
+  min-width: 300px;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.bio-image { 
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 1rem;
+}
+
+
+.rightside {
+  flex: 2;
+  min-width: 300px;
+  padding: 3rem;
+  background: white;
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.project-title {
+  font-size: 2rem;
+  color: hsl(249, 83%, 49%);
+  margin-bottom: 1rem;
+}
+
+.pitch {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #374151;
+}
+
+.innovation {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.bio h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.bio p {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .leftside, .rightside {
+    padding: 2rem;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+
+  .bio h3 {
+    font-size: 1.2rem;
+  }
+}
