@@ -1,107 +1,368 @@
-body {
+/* Reset and global styles */
+* {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #f0fdf4;
-  color: #1f2937;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.wrapper {
-  display: flex;
-  min-height: 100vh;
-  flex-wrap: wrap;
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
-.leftside {
-  background: #0b0b64f1;
+/* HERO SECTION */
+.hero {
+  height: 100vh;
+  width: 100%;
+  background-image: url(/assets/farmland.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
   display: flex;
-  flex: 1;
   flex-direction: column;
-  color: white;
-  min-width: 300px;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  text-align: center;
+  justify-content: space-between;
+  padding: 1.5rem 8%;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  animation: slideDown 0.8s ease-in-out;
 }
 
-.bio-image { 
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  margin-bottom: 1rem;
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.name {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+.logo {
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  animation: fadeInLeft 1s ease-in-out;
 }
 
-.title {
-  font-size: 1rem;
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-
-.rightside {
-  flex: 2;
-  min-width: 300px;
-  padding: 3rem;
-  background: white;
+span {
+  color: #035d21;
 }
 
-.fade-in {
-  animation: fadeIn 2s ease-in-out;
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 0.5rem 1rem;
 }
 
-.project-title {
-  font-size: 2rem;
-  color: hsl(249, 83%, 49%);
-  margin-bottom: 1rem;
+nav ul li a {
+  color: #131413;
+  font-weight: bold;
+  text-transform: capitalize;
+  transition: color 0.3s;
 }
 
-.pitch {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: #374151;
+nav ul li a:hover {
+  color: #0c8a47;
 }
 
-.innovation {
-  font-size: 1rem;
-  color: #4b5563;
-  margin-bottom: 1.5rem;
+.btn {
+  background-color: #0f7732;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 25px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  animation: fadeInRight 1s ease-in-out;
 }
 
-.bio h2 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.bio p {
-  font-size: 1rem;
-  color: #4b5563;
-  margin-bottom: 1rem;
+.btn:hover {
+  transform: scale(1.1);
+  background-color: #0c8a47;
 }
 
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(10px); }
+.content {
+  padding: 10% 8%;
+  max-width: 800px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive Design */
+h1 {
+  color: #876942;
+  font-size: 3.5rem;
+  margin: 1rem 0;
+}
+
+p {
+  color: #000000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  color: #543e22;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.newsletter form {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
+
+.newsletter form input:first-child {
+  width: 100%;
+  padding: 1rem 1rem 1rem 1.5rem;
+  border: 2px solid #0f7732;
+  border-radius: 30px;
+}
+
+.newsletter form input:last-child {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  background-color: #0f7732;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 5px #000, 0 0 15px #858585;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.newsletter form input:last-child:hover {
+  background-color: #0c8a47;
+}
+
+/* ABOUT SECTION */
+.about {
+  width: 100%;
+  padding: 6rem 2rem;
+  background: rgb(2, 2, 93);
+  animation: fadeIn 2s ease-in;
+}
+
+.about img {
+  max-width: 100%;
+  border-radius: 12px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.about-text {
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text h2 {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-text h5 {
+  color: #eee;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  color: #fcfcfc;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+
+.main h3 {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #ddeae1;
+}
+
+.main ul {
+  color: white;
+}
+
+.bio-text li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+  list-style-position: outside;
+}
+
+button {
+  background-color: #0f7732;
+  color: #fcfcfc;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: transparent;
+  border: 2px solid #0f7732;
+}
+/* BIO SECTIONS */
+.project-text {
+  margin-bottom: 2rem;
+  padding-left: 1.2rem;
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.project-text li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+  list-style-position: outside;
+}
+
+.project-text strong {
+  color: #0f7732;
+}
+
+
+/* INNOVATION BOX */
+.container {
+  background-color: #bec7c2;
+  border-left: 5px solid #0f7732;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 3s ease-in-out;
+}
+
+.container h2 {
+  font-size: 1.5rem;
+  color: #0f7732;
+  margin-bottom: 1rem;
+}
+
+.container p {
+  color: #222;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+
+/* FOOTER */
+.footer {
+  background-color: #0f7732;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.footer .social-links a {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 1rem;
+  transition: transform 0.3s ease;
+}
+
+.footer .social-links a:hover {
+  transform: scale(1.2);
+  color: #e0ffe6;
+}
+
+.footer p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
-  .wrapper {
+  .hero {
+    text-align: center;
+  }
+
+  .content {
+    padding: 6rem 2rem;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav .btn {
+    padding: 0.5rem 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .main {
     flex-direction: column;
+    align-items: center;
   }
 
-  .leftside, .rightside {
-    padding: 2rem;
+  .about-text h2 {
+    font-size: 2rem;
   }
+}
 
-  .project-title {
-    font-size: 1.5rem;
-  }
-
-  .bio h3 {
-    font-size: 1.2rem;
-  }
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
 }
